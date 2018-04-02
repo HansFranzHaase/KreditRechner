@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Kreditrechner</title>
+	
+	<link rel="stylesheet" type="text/css" href="file/style.css">
+	<script src="file/script.js"></script>
+</head>
+
+<body>
+
+	<div id="page-wrap_h1">
+		<h1>Zinsrechner</h1>
+	</div>	   
+
+	<div id="page-wrap_s">
+		<form id="inputs" oninput="recalculate()">
+
+
+			<p>
+				<div id="l">
+					<!--Jahre(int):--> Dauer: <br>
+					Zinssatz<!--(float)-->: <br>
+					Betrag<!--(int)-->: <br>
+					Rate<!--(int)-->:<br>
+					Sondertilgung<!--(int)-->:
+				</div>
+				<div id="m">
+					<input  name="jahr_inp" type="number" value="5" step="1" /> <br>
+					<input  name="zins_inp" type="number" value="1.5" step="0.01"/> <br>
+					<input  name="betr_inp" type="number" value="200000" step="1000"/> <br>
+					<input  name="rate_inp" type="number" value="700" step="50"/> 				
+					<br>
+					<input  name="sond_inp" type="number" value="1000" step="1000"/>	
+				</div>
+				<div id="r">
+					Jahre <br>
+					%<br>
+					€<br>
+					<select name="op" onchange="recalculate()">
+						<option value="0">in €</option>
+						<option value="1">in % Tilgung</option>
+					</select>				
+					<br>
+					€ pro Jahr		
+				</div>
+			</p> <br> 
+
+			<p>
+				<div id="l">
+					Restschuld: 	
+					Eingezahlt:
+				</div>
+				<div id="m_erg" align="right">
+					<div id="amount_remaining_div">	??</div>
+					<div id="amount_paid_div">	??</div>
+				</div>
+				<div id="m_erg2"> <br>
+				</div>
+				<div id="r">
+					€ <br>
+					€
+				</div>
+				<div  style="clear: left; padding-left: 30px" >  
+					<button type="button" onclick="toggleDetails()">Details ein-/ausblenden</button>
+				</div>
+
+			</p> 
+
+			<!--</div>-->
+
+		</form>	
+
+	</div>
+
+	<div id="details_cover">
+
+
+
+
+	</div>
+
+
+</body>
+
+</html>
