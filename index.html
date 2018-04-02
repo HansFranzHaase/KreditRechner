@@ -4,16 +4,16 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<title>Kreditrechner</title>
+	<title id="title">Kreditrechner</title>
 	
 	<link rel="stylesheet" type="text/css" href="file/style.css">
 	<script src="file/script.js"></script>
 </head>
 
-<body>
+<body onload="translate();">
 
 	<div id="page-wrap_h1">
-		<h1>Zinsrechner</h1>
+		<h1 id="heading" >Zinsrechner</h1>
 	</div>	   
 
 	<div id="page-wrap_s">
@@ -21,12 +21,12 @@
 
 
 			<p>
-				<div id="l">
-					<!--Jahre(int):--> Dauer: <br>
-					Zinssatz<!--(float)-->: <br>
-					Betrag<!--(int)-->: <br>
-					Rate<!--(int)-->:<br>
-					Sondertilgung<!--(int)-->:
+				<div class="l" id="input_names">
+					Dauer: <br>
+					Zinssatz: <br>
+					Betrag: <br>
+					Rate:<br>
+					Sondertilgung:
 				</div>
 				<div id="m">
 					<input  name="jahr_inp" type="number" value="5" step="1" /> <br>
@@ -36,7 +36,7 @@
 					<br>
 					<input  name="sond_inp" type="number" value="1000" step="1000"/>	
 				</div>
-				<div id="r">
+				<div class="r" id="input_units">
 					Jahre <br>
 					%<br>
 					€<br>
@@ -50,7 +50,7 @@
 			</p> <br> 
 
 			<p>
-				<div id="l">
+				<div class="l" id="output_names">
 					Restschuld: 	
 					Eingezahlt:
 				</div>
@@ -60,7 +60,7 @@
 				</div>
 				<div id="m_erg2"> <br>
 				</div>
-				<div id="r">
+				<div class="r">
 					€ <br>
 					€
 				</div>
@@ -82,7 +82,9 @@
 
 
 	</div>
-
+<script type="text/javascript">
+	translate();
+</script>
 
 </body>
 

@@ -58,7 +58,7 @@
     		color: navy;
     		margin-left: 20px;
 		}
-		#l { float:left; 
+		.l { float:left; 
 			width:100px;
 			text-indent: 0px;
 			padding-left: 30px; 
@@ -111,7 +111,7 @@
 			 width:10px;
 		}  	   
 
-		#r{ 
+		.r{ 
 			float:left; 
 			 width:100px;
 			 text-indent: 0px;

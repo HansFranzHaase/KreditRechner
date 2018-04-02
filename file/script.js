@@ -13,8 +13,56 @@ function toggleDetails() {
 	recalculate();
 }
 
+var language = "en";
+
+function translate(){
+  	if (language === "de"){
+  		document.getElementById("title").innerHTML = "Kreditrechner"; 
+  		document.getElementById("heading").innerHTML = "Zinsrechner"; 
+  		document.getElementById("input_names").innerHTML = "Dauer: <br>"
+			+ "Zinssatz: <br>"
+			+ "Betrag: <br>"
+			+ "Rate:<br>"
+			+ "Sondertilgung:";
+  		document.getElementById("input_units").innerHTML = "Jahre <br>"
+			+ "%<br>"
+			+ "€<br>"
+			+ "<select name=\x22op\x22 onchange=\x22recalculate()\x22>"
+			+ "		<option value=\x220\x22>in €</option>"
+			+ "		<option value=\x221\x22>in % Tilgung</option>"
+			+ "</select>"				
+			+ "<br>"
+			+ "€ pro Jahr";	
+  		document.getElementById("output_names").innerHTML = "Restschuld:" 	
+			+ "	Eingezahlt:";
+
+  	}
+  	if (language === "en"){
+  		document.getElementById("title").innerHTML = "Kredit Calculator"; 
+  		document.getElementById("heading").innerHTML = "Interest Calculator"; 
+  		document.getElementById("input_names").innerHTML = "Duration: <br>"
+			+ "Interest: <br>"
+			+ "Amount: <br>"
+			+ "Monthl. Rate:<br>"
+			+ "Yearl. Rate:";
+  		document.getElementById("input_units").innerHTML = "years <br>"
+			+ "%<br>"
+			+ "€<br>"
+			+ "<select name=\x22op\x22 onchange=\x22recalculate()\x22>"
+			+ "		<option value=\x220\x22> €</option>"
+			+ "		<option value=\x221\x22> % amortization</option>"
+			+ "</select>"				
+			+ "<br>"
+			+ "€ per year";	
+  		document.getElementById("output_names").innerHTML = "Residual debt:" 	
+			+ "	Deposited:";
+
+	
+  	}
+}
 
 function recalculate() { 
+
 
 	calc_details = "";	
 	calc_det_Jahr = "Jahr <br>";
@@ -118,5 +166,5 @@ function recalculate() {
 }
 
 
-recalculate();
+/*recalculate();*/
 
