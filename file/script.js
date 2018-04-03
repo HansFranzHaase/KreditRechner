@@ -13,7 +13,7 @@ function toggleDetails() {
 	recalculate();
 }
 
-var language = "en";
+var language = "de";
 
 function translate(){
   	if (language === "de"){
@@ -28,14 +28,19 @@ function translate(){
 			+ "%<br>"
 			+ "€<br>"
 			+ "<select name=\x22op\x22 onchange=\x22recalculate()\x22>"
-			+ "		<option value=\x220\x22>in €</option>"
-			+ "		<option value=\x221\x22>in % Tilgung</option>"
+			+ "		<option value=\x220\x22>€</option>"
+			+ "		<option value=\x221\x22>% Tilgung</option>"
 			+ "</select>"				
 			+ "<br>"
 			+ "€ pro Jahr";	
   		document.getElementById("output_names").innerHTML = "Restschuld:" 	
 			+ "	Eingezahlt:";
-
+		/*calc_details = "";	*/
+		calc_det_Jahr_init = "Jahr <br>";
+		calc_det_mRate_init = "monatl. Rate <br>";
+		calc_det_STlg_init = "Sondertilgung <br>";
+		calc_det_Rest_init = "Restschuld <br>";
+		document.getElementById("details_button").innerHTML = "Details ein-/ausblenden";
   	}
   	if (language === "en"){
   		document.getElementById("title").innerHTML = "Kredit Calculator"; 
@@ -57,18 +62,22 @@ function translate(){
   		document.getElementById("output_names").innerHTML = "Residual debt:" 	
 			+ "	Deposited:";
 
-	
+		/*calc_details = "";*/	
+		calc_det_Jahr_init = "year <br>";
+		calc_det_mRate_init = "Monthl. Rate <br>";
+		calc_det_STlg_init = "Yearl. Rate <br>";
+		calc_det_Rest_init = "Res. Debt <br>";
+		document.getElementById("details_button").innerHTML = "Toggle Details";
   	}
 }
 
 function recalculate() { 
 
 
-	calc_details = "";	
-	calc_det_Jahr = "Jahr <br>";
-	calc_det_mRate = "monatl. Rate <br>";
-	calc_det_STlg = "Sondertilgung <br>";
-	calc_det_Rest = "Restschuld <br>";
+		var calc_det_Jahr = calc_det_Jahr_init;
+		var calc_det_mRate = calc_det_mRate_init;
+		var calc_det_STlg = calc_det_STlg_init;
+		var calc_det_Rest = calc_det_Rest_init;
 
 
 
@@ -128,7 +137,7 @@ function recalculate() {
 
 
 	  	var mmmm=paid;
-	  	calc_details=calc_details + mmmm.toFixed(2) +"<br>";
+	  	/*calc_details=calc_details + mmmm.toFixed(2) +"<br>";*/
 
 	  	calc_det_Jahr = calc_det_Jahr + years_paid +"<br>";
 	  	calc_det_mRate = calc_det_mRate + rate.toFixed(2)  +"<br>";
